@@ -1,0 +1,11 @@
+@"
+runtime/
+runs/
+**/__pycache__/
+*.py[cod]
+*.log
+*.bak
+*.env
+*.local
+*.secret
+"@ | Set-Content .gitignore

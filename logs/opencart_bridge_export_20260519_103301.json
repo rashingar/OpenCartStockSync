@@ -1,0 +1,60 @@
+{
+  "ok": true,
+  "profile": "Bridge",
+  "admin_index": "https://www.etranoulis.gr/ipadmin/index.php",
+  "export_route": "extension/ka_extensions/csv_product_export/ka_product_export",
+  "output_file": "C:\\OpenCartStockSync\\input\\opencart_export.csv",
+  "log_file": "C:\\OpenCartStockSync\\logs\\opencart_bridge_export_20260519_103301.log",
+  "report_file": "C:\\OpenCartStockSync\\logs\\opencart_bridge_export_20260519_103301.json",
+  "login": {
+    "ok": true,
+    "url_after_login": "https://www.etranoulis.gr/ipadmin/index.php?route=common/dashboard&user_token=camKBsVizhuJVP5PDOnAWbRPFjAHzGA9"
+  },
+  "export_page": {
+    "ok": true,
+    "url": "https://www.etranoulis.gr/ipadmin/index.php?route=extension%2Fka_extensions%2Fcsv_product_export%2Fka_product_export&user_token=camKBsVizhuJVP5PDOnAWbRPFjAHzGA9"
+  },
+  "profile_load": {
+    "profile_requested": "Bridge",
+    "profile_selected": "Bridge",
+    "selected_select_index": 0,
+    "clicked_load_selector": "button:has-text(\"Load\")",
+    "loaded_by_button": true,
+    "alert_text": "Profile has been loaded succesfully\n×",
+    "url_after_load": "https://www.etranoulis.gr/ipadmin/index.php?route=extension/ka_extensions/csv_product_export/ka_product_export&user_token=camKBsVizhuJVP5PDOnAWbRPFjAHzGA9",
+    "inspected_selects": [
+      {
+        "index": 0,
+        "name": "profile_id",
+        "id": "profile_id",
+        "options": [
+          "model+qty",
+          "Catalog",
+          "Bridge",
+          "TCL",
+          "sourceCata",
+          "LG 50+",
+          "Toyotomi"
+        ]
+      }
+    ]
+  },
+  "previous_output_backup": "C:\\OpenCartStockSync\\input\\opencart_export.csv.previous_20260519_103301.bak",
+  "download": {
+    "ok": true,
+    "clicked_selector": "step1=step1_to_step2: selector=button:has-text(\"Next\") index=0; step2=step2_to_step3: selector=button:has-text(\"Next\") index=0; completion=text=\"Export is complete!\"; download=a:has-text(\"download\") index=0",
+    "suggested_filename": "export_2026-05-19.csv",
+    "saved_as": "C:\\OpenCartStockSync\\input\\opencart_export.csv",
+    "validation": {
+      "path": "C:\\OpenCartStockSync\\input\\opencart_export.csv",
+      "size_bytes": 256206,
+      "first_line": "model,name,price,quantity,status",
+      "found_expected_header_tokens": [
+        "model",
+        "price",
+        "quantity",
+        "status"
+      ]
+    }
+  }
+}

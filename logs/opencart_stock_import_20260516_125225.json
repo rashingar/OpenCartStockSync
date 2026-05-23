@@ -1,0 +1,71 @@
+{
+  "ok": true,
+  "dry_run": true,
+  "profile": "stock-only",
+  "admin_index": "https://www.etranoulis.gr/ipadmin/index.php",
+  "import_route": "extension/ka_extensions/csv_product_import/ka_product_import",
+  "csv_file": "C:\\OpenCartStockSync\\runs\\latest\\oc_stock.csv",
+  "csv_contract": {
+    "path": "C:\\OpenCartStockSync\\runs\\latest\\oc_stock.csv",
+    "sha256": "4874908b72a034c6cba805648c66458d782bc5a11597cce7812c648fd9dfc82e",
+    "headers": [
+      "model",
+      "quantity"
+    ],
+    "row_count": 9,
+    "zero_quantity_count": 3,
+    "zero_quantity_ratio_percent": 33.33,
+    "quantity_sum": 30
+  },
+  "log_file": "C:\\OpenCartStockSync\\logs\\opencart_stock_import_20260516_125225.log",
+  "report_file": "C:\\OpenCartStockSync\\logs\\opencart_stock_import_20260516_125225.json",
+  "login": {
+    "ok": true,
+    "url_after_login": "https://www.etranoulis.gr/ipadmin/index.php?route=common/dashboard&user_token=cTwQncxDHACKVn6rua12AzhAL7x2yx4X"
+  },
+  "import_page": {
+    "ok": true,
+    "url": "https://www.etranoulis.gr/ipadmin/index.php?route=extension%2Fka_extensions%2Fcsv_product_import%2Fka_product_import&user_token=cTwQncxDHACKVn6rua12AzhAL7x2yx4X"
+  },
+  "profile_load": {
+    "profile_requested": "stock-only",
+    "profile_selected": "stock-only",
+    "selected_select_index": 0,
+    "clicked_load_selector": "button:has-text(\"Load\")",
+    "alert_text": "Profile has been loaded succesfully\n×",
+    "url_after_load": "https://www.etranoulis.gr/ipadmin/index.php?route=extension/ka_extensions/csv_product_import/ka_product_import&user_token=cTwQncxDHACKVn6rua12AzhAL7x2yx4X",
+    "inspected_selects": [
+      {
+        "index": 0,
+        "name": "profile_id",
+        "id": "profile_id",
+        "options": [
+          "csv",
+          "ean",
+          "product_new",
+          "stock-only"
+        ]
+      }
+    ]
+  },
+  "step1": {
+    "ok": true,
+    "url_after_upload": "https://www.etranoulis.gr/ipadmin/index.php?route=extension/ka_extensions/csv_product_import/ka_product_import/step2&user_token=cTwQncxDHACKVn6rua12AzhAL7x2yx4X"
+  },
+  "step2": {
+    "profile_expected": "stock-only",
+    "profile_name": "stock-only",
+    "profile_ok": true,
+    "model_mapping": {
+      "selected_text": "model",
+      "selected_value": "1",
+      "ok": true
+    },
+    "quantity_mapping": {
+      "selected_text": "quantity",
+      "selected_value": "2",
+      "ok": true
+    }
+  },
+  "message": "Dry run passed. Stopped on Step 2 before final import."
+}
