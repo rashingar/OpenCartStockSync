@@ -1,11 +1,26 @@
-@"
+# Runtime / vendored dependencies
 runtime/
+
+# Generated run outputs
 runs/
-**/__pycache__/
-*.py[cod]
-*.log
-*.bak
+logs/
+exports/
+input/*.csv
+input/*.bak
+
+# Secrets and local overrides
+.secrets/*.env
 *.env
 *.local
 *.secret
-"@ | Set-Content .gitignore
+
+# Python cache/build outputs
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generic generated artifacts
+*.log
+*.bak
+*.tmp
+*.download

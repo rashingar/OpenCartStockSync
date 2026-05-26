@@ -25,6 +25,9 @@ from tools.opencart_config import resolve_opencart_config
 
 DEFAULT_HEADLESS = True
 DEFAULT_EXPORT_ROUTE = "extension/ka_extensions/csv_product_export/ka_product_export"
+SENSITIVE_QUERY_RE = re.compile(
+    r"(?i)([?&](?:user_token|token|password|pass|key|api[_-]?key)=)([^&\"'\s]+)"
+)
 
 
 class BridgeExportError(RuntimeError):
@@ -116,10 +119,26 @@ def get_alert_text(page) -> str:
         return ""
 
 
+def redact_report_value(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {key: redact_report_value(item) for key, item in value.items()}
+
+    if isinstance(value, list):
+        return [redact_report_value(item) for item in value]
+
+    if isinstance(value, tuple):
+        return [redact_report_value(item) for item in value]
+
+    if isinstance(value, str):
+        return SENSITIVE_QUERY_RE.sub(r"\1***", value)
+
+    return value
+
+
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(redact_report_value(payload), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
